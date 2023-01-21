@@ -11,7 +11,7 @@
     <meta property="twitter:description" content="A collection of Free and Open-Source Godot demos" />
         
     <meta property="og:type" content="article" />
-    <meta name="date" content="2023-01-04" />
+    <meta name="date" content="2023-01-21" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
         <title>GDQuest Godot Demos</title>
         <style>
@@ -55,7 +55,6 @@ html {
 
 body {
 	font-size: 1.4em;
-	touch-action: none;
 	margin: 0;
 	border: 0 none;
 	background-color: #fdfdfd;
@@ -259,7 +258,8 @@ button {
 	background-color: #000;
 	width: 100%;
 	display: flex;
-	padding-bottom: 1em;
+	padding: 1em;
+	box-sizing: border-box;
 	flex-direction: column;
 	margin-bottom: 4em;
 	justify-content: center;
@@ -696,7 +696,12 @@ button {
 
 /*-- GITHUB RIBBON --*/
 
+#github-ribbon {
+	width: 100%;
+}
+
 #github-ribbon a {
+	display: block;
 	background-color: #000;
 	color: #fff;
 	text-decoration: none;
@@ -729,7 +734,7 @@ button {
 	bottom: 1px;
 	top: auto;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 40em) {
 	#github-ribbon {
 		position: absolute;
 		display: block;
@@ -893,6 +898,54 @@ button {
 }
 
 /*-- /DEMO LINKS --*/
+
+/*-- MOBILE STYLES --*/
+
+@media all and (max-width: 40rem) {
+	footer .site-link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.play-area.container {
+		display: none;
+	}
+
+	.header .title {
+		font-size: 1.5em;
+	}
+
+	.site-navigation a::after {
+		content: none;
+	}
+
+	.site-navigation {
+		font-size: 0.8em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.container {
+		margin: 1em 0;
+		padding: 0.5em;
+	}
+
+	.demos-list {
+		grid-template-columns: none;
+	}
+}
+
+#github-ribbon {
+	width: 100%;
+}
+
+#github-ribbon a {
+	display: block;
+}
+
+/*-- /MOBILE STYLES --*/
     </style>
       </head>
   <body class="mode-indeterminate">
@@ -944,7 +997,7 @@ button {
             </main>
 
         <footer class="footer">
-            <a href="https://www.gdquest.com">GDQuest Website</a>
+            <a href="https://www.gdquest.com" class="site-link">GDQuest Website</a>
           <a class="social-link icon-twitter" href="https://www.twitter.com/NathanGDQuest" title="GDquest on twitter">
         <span class="sr-only">GDQuest on twitter</span>
       </a>
